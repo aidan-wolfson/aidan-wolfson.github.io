@@ -16,7 +16,7 @@ function navButtonClicked()
         document.location='../index.html'
     }
     if(this.id == "button1"){
-        document.location='../detailsPage/Carlton_Chiedza.html'
+        document.location='../detailsPage/detailspage.html'
     } else if(this.id == "button2"){
         // calendar
         document.location='../calendarPage/calendarpage.html'
