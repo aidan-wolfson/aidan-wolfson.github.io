@@ -5,7 +5,7 @@ body {
 .banner {
     width: 100vw;
     height: 20vh;
-    background: url('landingPage/banner.png') no-repeat center center;
+    background: url('./banner.png') no-repeat center center;
     background-size: contain;
     background-color: white;
     display: flex;
@@ -96,9 +96,9 @@ body {
 }
 
 h1{
-    margin-left:5%;
+    margin-left:1%;
 }
 
 p{
-    margin-left:5%;
+    margin-left:1%;
 }
