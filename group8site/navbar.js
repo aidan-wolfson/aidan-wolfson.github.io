@@ -13,7 +13,7 @@ button4.addEventListener("click", navButtonClicked);
 function navButtonClicked()
 {
     if(this.id == "button0"){
-        document.location='../landingPage/landingpage.html'
+        document.location='../index.html'
     }
     if(this.id == "button1"){
         document.location='../detailsPage/Carlton_Chiedza.html'
