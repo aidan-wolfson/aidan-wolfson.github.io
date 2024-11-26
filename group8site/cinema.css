@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.banner {
+    width: 100vw;
+    height: 20vh;
+    background: url('landingPage/banner.png') no-repeat center center;
+    background-size: contain;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 10%;
+    scale: 1.1;
+}
+.nav-buttons input {
+    background-color: lightblue;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.nav-buttons input:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+.content-image {
+    width: 100%;
+    display: block;
+}
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+.movie-item {
+    text-align: center;
+}
+.movie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.movie-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+.movie-item a:hover {
+    color: deepskyblue;
+}
+
+.floating-posters {
+    position: absolute;
+    top: 35%;
+    left: 37%; 
+    width: 60%; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 15px;
+    margin-bottom: 30px;
+}
+.floating-posters .movie-item {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+}
+.floating-posters .movie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.floating-posters .movie-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+.floating-posters .movie-item a:hover {
+    color: deepskyblue;
+}
+
+h1{
+    margin-left:5%;
+}
+
+p{
+    margin-left:5%;
+}

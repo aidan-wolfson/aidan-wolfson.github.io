@@ -1,0 +1,75 @@
+.moviecontainer{
+	background: lightgrey;
+	border-top: 2px solid black;
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.poster{
+	width: 30%;
+	margin: 10px;
+	float: left;
+	padding: 5px;
+}
+
+.movietitle{
+	 	width: 30%;
+		margin: 10px;
+		float: left;
+		padding: 5px;
+	}
+
+.trailer{
+		width: 35%;
+		margin: auto;
+		float: right;
+		padding: 5px;
+}
+
+/* following CSS is from w3schools */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+  }
+  
+  li {
+    margin-left:4%;
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .navbar-week{
+    background-color: #333;
+    margin-bottom: 0;
+  }
+
+  .date-container {
+    background-color: white;
+  }
+
+  .date-title {
+    background-color: white;
+    color: black;
+  }
+
+  body {
+    background-color: white;
+  }

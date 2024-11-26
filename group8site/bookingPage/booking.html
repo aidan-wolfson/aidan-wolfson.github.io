@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Page</title>
+    <link rel="stylesheet" type="text/css" href="../cinema.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .movie-selection, .payment {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .screen {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #ccc;
+            border-radius: 4px;
+        }
+        #seats-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .seat {
+            width: 40px;
+            height: 40px;
+            background: #28a745;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .seat.selected {
+            background: #ffc107;
+        }
+        .seat.occupied {
+            background: #dc3545;
+            cursor: not-allowed;
+        }
+        #book-now {
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #book-now:hover {
+            background: #0056b3;
+        }
+        #confirmation-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+		<div class="nav-buttons">
+			<input type="button" value="Home" id="button0">
+			<input type="button" value="What's Playing" id="button1">
+			<input type="button" value="Upcoming Schedule" id="button2">
+			<input type="button" value="Account" id="button3">
+			<input type="button" value="Accessibility" id="button4">
+		</div>
+	</div>
+
+    <div class="container">
+        <h1>Book Your Movie</h1>
+        
+        <!-- Movie, Date, and Time Selection -->
+        <div class="movie-selection">
+            <label for="movie">Choose a Movie:</label>
+            <select id="movie">
+                <option value="10">Venom: The Last Dance - $10</option>
+                <option value="12">Saturday Night - $10</option>
+                <option value="8">Smallfoot - $10</option>
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date">
+
+            <label for="time">Select Time:</label>
+            <select id="time">
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+            </select>
+        </div>
+        
+        <!-- Seating Layout -->
+        <div class="seating">
+            <h2>Select Your Seats</h2>
+            <div class="screen">Screen</div>
+            <div id="seats-container"></div>
+            <p id="seat-summary">Selected Seats: <span id="selected-seats">0</span> | Total: $<span id="total-price">0</span></p>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment">
+            <h2>Payment Details</h2>
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" placeholder="John Doe">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="month" id="expiry-date">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123">
+        </div>
+
+        <!-- Booking Confirmation -->
+        <button id="book-now">Book Now</button>
+        <div id="confirmation-message"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const seatsContainer = document.getElementById('seats-container');
+            const selectedSeats = document.getElementById('selected-seats');
+            const totalPrice = document.getElementById('total-price');
+            const movieSelect = document.getElementById('movie');
+            const bookNowButton = document.getElementById('book-now');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            const dateInput = document.getElementById('date');
+            const timeSelect = document.getElementById('time');
+
+            // Generate seats
+            for (let i = 1; i <= 64; i++) {
+                const seat = document.createElement('div');
+                seat.classList.add('seat');
+                seat.dataset.id = i;
+
+                // Simulate occupied seats
+                if (Math.random() < 0.2) {
+                    seat.classList.add('occupied');
+                }
+
+                seat.addEventListener('click', () => {
+                    if (!seat.classList.contains('occupied')) {
+                        seat.classList.toggle('selected');
+                        updateSelection();
+                    }
+                });
+
+                seatsContainer.appendChild(seat);
+            }
+
+            // Update seat selection
+            function updateSelection() {
+                const selected = document.querySelectorAll('.seat.selected');
+                const pricePerSeat = parseInt(movieSelect.value);
+                selectedSeats.textContent = selected.length;
+                totalPrice.textContent = selected.length * pricePerSeat;
+            }
+
+            // Book Now button functionality
+            bookNowButton.addEventListener('click', () => {
+                const selected = document.querySelectorAll('.seat.selected');
+                const date = dateInput.value;
+                const time = timeSelect.value;
+
+                if (!date) {
+                    alert('Please select a date.');
+                    return;
+                }
+
+                if (!time) {
+                    alert('Please select a time.');
+                    return;
+                }
+
+                if (selected.length === 0) {
+                    alert('Please select at least one seat.');
+                    return;
+                }
+
+                const paymentSuccess = Math.random() > 0.2;
+
+                if (paymentSuccess) {
+                    confirmationMessage.textContent = `Seats ${Array.from(selected).map(s => s.dataset.id).join(', ')} successfully reserved for ${date} at ${time}! Enjoy your movie experience.`;
+                    confirmationMessage.style.color = 'green';
+                    selected.forEach(seat => {
+                        seat.classList.remove('selected');
+                        seat.classList.add('occupied');
+                    });
+                    updateSelection();
+                } else {
+                    confirmationMessage.textContent = 'Payment not received. Please try again.';
+                    confirmationMessage.style.color = 'red';
+                }
+            });
+
+            // Movie and Time Selection Confirmation
+            movieSelect.addEventListener('change', updateMovieSelection);
+            timeSelect.addEventListener('change', updateMovieSelection);
+
+            function updateMovieSelection() {
+                const movieName = movieSelect.options[movieSelect.selectedIndex].text.split(' - ')[0];
+                const date = dateInput.value || '[Date]';
+                const time = timeSelect.value || '[Time]';
+                confirmationMessage.textContent = `Great choice! You've selected ${movieName} for ${date} at ${time}. Proceed to choose your seats.`;
+                confirmationMessage.style.color = 'blue';
+            }
+        });
+    </script>
+</body>
+
+<script src="../navbar.js"></script>
+</html>

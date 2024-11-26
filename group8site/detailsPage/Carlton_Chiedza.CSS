@@ -1,0 +1,100 @@
+h1{
+	color: #black;
+	padding: 5px;
+	  font-family: "Arial", sans-serif;
+	  font-optical-sizing: auto;
+  	font-weight: 500;
+  	font-style: bold;
+  	clear: both;
+}
+
+h2{
+	color: #blue;
+	padding: 5px;
+	  font-family: "Arial", sans-serif;
+	  font-optical-sizing: auto;
+  	font-weight: 500;
+  	font-style: normal;
+  	clear: both;
+}
+
+h3{
+	color: #black;
+	padding: 5px;
+	  font-family: "Roboto", sans-serif;
+	  font-optical-sizing: auto;
+  	font-weight: 600;
+  	font-style: bold;
+  	clear: both;
+}
+
+p{
+	color: #black;
+	padding: 5px;
+	  font-family: "Roboto", sans-serif;
+	  font-optical-sizing: auto;
+  	font-weight: 400;
+  	font-style: normal;
+}
+
+h4{
+	color: #black;
+	padding: 5px;
+	  font-family: "Roboto", sans-serif;
+	  font-optical-sizing: auto;
+  	font-weight: 600;
+  	font-style: medium;
+
+}
+
+.poster{
+	width: 30%;
+	margin: 10px;
+	float: left;
+	padding: 5px;
+}
+
+.movietitle{
+	 	width: 30%;
+		margin: 10px;
+		float: left;
+		padding: 5px;
+	}
+
+.trailer{
+		width: 35%;
+		margin: auto;
+		float: right;
+		padding: 5px;
+}
+
+.moviecontainer{
+	background: lightgrey;
+	border-top: 2px solid black;
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.menucontainer{
+	background: lightgrey;
+	border: 2px solid black;
+	content: "";
+	padding: 2px;
+	margin-bottom: 5px;
+}
+
+.button {
+    background-color: black; /* Initial background color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+.button:hover {
+    background-color: blue; /* Change to blue when hovered */
+}
+
+

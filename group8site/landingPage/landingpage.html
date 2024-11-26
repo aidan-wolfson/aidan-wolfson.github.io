@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carlton Cinema Landing Page</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+		}
+		.banner {
+			width: 100vw;
+			height: 20vh;
+			background: url('banner.png') no-repeat center center;
+			background-size: contain;
+			background-color: white;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+		.nav-buttons {
+			display: flex;
+			gap: 10px;
+			margin-right: 10%;
+			scale: 1.1;
+		}
+		.nav-buttons input {
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 10px 15px;
+			cursor: pointer;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+		.nav-buttons input:hover {
+			background-color: deepskyblue;
+			color: white;
+		}
+		.content-image {
+			width: 100%;
+			display: block;
+		}
+		.movies-container {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			padding: 20px;
+			background-color: black;
+			color: white;
+		}
+		.movie-item {
+			text-align: center;
+		}
+		.movie-item img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+		.movie-item a {
+			color: white;
+			text-decoration: none;
+			font-size: 16px;
+			display: block;
+			margin-top: 10px;
+		}
+		.movie-item a:hover {
+			color: deepskyblue;
+		}
+		
+		.floating-posters {
+			position: absolute;
+			top: 25%;
+			left: 37%; 
+			width: 60%; 
+			display: grid;
+			grid-template-columns: repeat(3, 1fr); /* 3 columns */
+			grid-gap: 15px;
+		}
+		.floating-posters .movie-item {
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 10px;
+			border-radius: 8px;
+		}
+		.floating-posters .movie-item img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+		.floating-posters .movie-item a {
+			color: white;
+			text-decoration: none;
+			font-size: 14px;
+			display: block;
+			margin-top: 5px;
+		}
+		.floating-posters .movie-item a:hover {
+			color: deepskyblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<div class="nav-buttons">
+			<input type="button" value="Home" id="button0">
+			<input type="button" value="What's Playing" id="button1">
+			<input type="button" value="Upcoming Schedule" id="button2">
+			<input type="button" value="Account" id="button3">
+			<input type="button" value="Accessibility" id="button4">
+		</div>
+	</div>
+
+
+	<img src="$5 .png" alt="Imagine Carlton November" class="content-image">
+	<h2 style="text-align: center; margin: 20px 20px; font-size: 24px; font-family: Arial, sans-serif;">Current Movies</h2>
+
+
+	<div class="floating-posters">
+		<div class="movie-item">
+			<img src="my.jpeg" alt="My Neighbor Totoro">
+			<a href="#">My Neighbor Totoro</a>
+		</div>
+		<div class="movie-item">
+			<img src="Nott.jpeg" alt="Notting Hill">
+			<a href="#">Notting Hill</a>
+		</div>
+		<div class="movie-item">
+			<img src="Pon.jpeg" alt="Ponyo">
+			<a href="#">Ponyo</a>
+		</div>
+		<div class="movie-item">
+			<img src="rock.jpeg" alt="Rocky">
+			<a href="#">Rocky</a>
+		</div>
+		<div class="movie-item">
+			<img src="sha.jpeg" alt="The Shawshank Redemption">
+			<a href="#">The Shawshank Redemption</a>
+		</div>
+		<div class="movie-item">
+			<img src="thankskilling.jpg" alt="ThanksKilling">
+			<a href="#">Thankskilling</a>
+		</div>
+		
+	</div>
+
+
+	<div class="movies-container">
+		<div class="movie-item">
+			<img src="movie1.jpg" alt="Venom: The Last Dance">
+			<a href="../detailsPage/Carlton_Chiedza.html">Venom: The Last Dance</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie2.jpg" alt="Saturday Night">
+			<a href="../detailsPage/Carlton_Chiedza.html">Saturday Night</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie3.jpg" alt="Smallfoot">
+			<a href="../detailsPage/Carlton_Chiedza.html">Smallfoot</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie4.jpg" alt="We Live In Time">
+			<a href="../detailsPage/Carlton_Chiedza.html">We Live In Time</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie5.jpg" alt="Small Things Like These">
+			<a href="../detailsPage/Carlton_Chiedza.html">Small Things Like These</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie6.jpg" alt="Auld Lang Syne">
+			<a href="../detailsPage/Carlton_Chiedza.html">Auld Lang Syne</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie7.jpg" alt="Heretic">
+			<a href="../detailsPage/Carlton_Chiedza.html">Heretic</a>
+		</div>
+		<div class="movie-item">
+			<img src="movie8.jpg" alt="The Apprentice">
+			<a href="../detailsPage/Carlton_Chiedza.html">The Apprentice</a>
+		</div>
+	</div>
+
+<script src="../navbar.js"></script>
+<script type="text/javascript">
+//
+</script>
+</body>
+</html>
+

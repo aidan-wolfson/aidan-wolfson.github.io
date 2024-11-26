@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Calendar</title>
+  <link rel="stylesheet" href="calendarStyle.css">
+  <link rel="stylesheet" href="../cinema.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="nav-buttons">
+            <input type="button" value="Home" id="button0">
+            <input type="button" value="What's Playing" id="button1">
+            <input type="button" value="Upcoming Schedule" id="button2">
+            <input type="button" value="Account" id="button3">
+            <input type="button" value="Accessibility" id="button4">
+        </div>
+    </div>
+    <div class="calendar-options">
+        <input class="filter-btn" type="button" value="By Month" id="bymonth">
+        <input class="filter-btn" type="button" value="By Week" id="byweek">
+    </div>
+    <div class="calendar-wrapper">
+            <div class="calendar-controls">
+
+                <!--<select id="time-select">
+                    <option value="month" selected>By Month</option>
+                </select>-->
+                <div class="nav-buttons">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="month-year">November 2024</h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <button class="filter-btn">Filters</button>
+            </div>
+        <div class="calendar-grid">
+        </div>
+    </div>
+    <script src="calendar.js"></script>
+    <script src="calendarMode.js"></script>
+    <script src="../navbar.js"></script>
+    </body>
+    </html>
