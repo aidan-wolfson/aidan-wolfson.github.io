@@ -72,6 +72,9 @@ function renderCalendar() {
 
       eventCard.appendChild(eventTime);
       eventCard.appendChild(eventTitle);
+      eventCard.addEventListener('click', () => {
+        window.location.href = '../bookingPage/booking.html';
+      });
       dateDiv.appendChild(eventCard);
     });
 
